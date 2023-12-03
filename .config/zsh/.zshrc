@@ -35,3 +35,5 @@ export MANPATH="/usr/local/man:$MANPATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# this annoying friggin file won't leave me the hell alone
+# rm --force --verbose --recursive $HOME/.viminfo
