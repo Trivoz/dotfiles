@@ -24,6 +24,12 @@ alias gc="git commit"
 alias gaa="git add ./* ./.*"
 alias ga="git add"
 
+# Tmux aliases
+alias tks="tmux kill-server"
+alias td="tmux detach"
+alias ta="tmux attach"
+alias tn="tmux new"
+alias tns="tmux new -s"
 
 
 # vim ft:zsh

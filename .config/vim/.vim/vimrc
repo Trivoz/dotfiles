@@ -1,7 +1,11 @@
-" Vim colors!
-let backgorund="dark"
+execute pathogen#infect()
 syntax on
-colorscheme habamax
+filetype plugin indent on
+let g:background="dark"
+
+" this sucks:
+set noswapfile
+set nobackup
 
 " Emoji and other character support
 set encoding=utf-8
@@ -59,9 +63,9 @@ set wildmenu wildoptions+=pum
 
 " enable and disable hlsearch automatically
 augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
 let b:changelog_name="CHANGELOG"
@@ -79,9 +83,15 @@ let &t_Ds = "\e[4:5m"
 
 " easier navigation in wrap mode
 if &wrap
-	nnoremap j gj
-	nnoremap k gk
+    nnoremap j gj
+    nnoremap k gk
 endif
+
+" tab settings
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 
 " stops .viminfo file from generating in $HOME
 let vif="/home/josh/.config/vim/.viminfo"
