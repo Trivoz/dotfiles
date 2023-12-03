@@ -1,0 +1,89 @@
+" Vim colors!
+let backgorund="dark"
+syntax on
+colorscheme habamax
+
+" Emoji and other character support
+set encoding=utf-8
+
+" smart numbering
+set relativenumber number
+
+let mapleader=" "
+
+" instant file shortcuts TODO: finish the alphabet
+" A, a
+nnoremap <leader>ea <Cmd>edit /home/josh/.config/awesome/rc.lua<CR>
+nnoremap <leader>eA <Cmd>edit /home/josh/.config/zsh/.aliases<CR>
+" C, c
+nnoremap <leader>ec <Cmd>edit $HOME/.config<CR>
+nnoremap <leader>eC <Cmd>edit /etc<CR>
+" H, h
+nnoremap <leader>eh <Cmd>edit /etc/host.conf<CR>
+nnoremap <leader>eH <Cmd>edit /etc/hostname<CR>
+" N, n
+nnoremap <leader>en <Cmd>edit /etc/ntp.conf<CR>
+nnoremap <leader>eN <Cmd>edit /etc/NetworkManager/NetworkManager.conf<CR>
+" T, t
+nnoremap <leader>et <Cmd>edit $HOME/.config/tmux/tmux.conf<CR>
+nnoremap <leader>eT <Cmd>edit $HOME/.config/awesome/theme.lua<CR>
+" X, x
+nnoremap <leader>ex <Cmd>Explore<CR>
+nnoremap <leader>eX <Cmd>edit /etc/X11/xinit<CR>
+" V, v
+nnoremap <leader>ev <Cmd>edit $MYVIMRC<CR>
+nnoremap <leader>eV <Cmd>edit /etc/vimrc<CR>
+" Y, y
+nnoremap <leader>ey <Cmd>edit $HOME/<CR>
+nnoremap <leader>eY <Cmd>edit /etc/pipewire/<CR>
+" Z, z
+nnoremap <leader>ez <Cmd>edit $HOME/.zshrc<CR>
+nnoremap <leader>eZ <Cmd>edit /etc/profile<CR>
+
+" buffer commands
+nnoremap <leader>bn <Cmd>bnext<CR>
+nnoremap <leader>bm <Cmd>bmodified<CR>
+nnoremap <leader>bs <Cmd>sbmodified<CR>
+nnoremap <leader>bh <Cmd>unhide<CR>
+nnoremap <leader>bp <Cmd>bprevious<CR>
+nnoremap <leader>bd <Cmd>bdelete<CR>
+nnoremap <leader>ba <Cmd>ball<CR>
+nnoremap <leader>bl <Cmd>blast<CR>
+nnoremap <leader>bf <Cmd>bfirst<CR>
+
+nnoremap <leader>bf <Cmd>Buffers<CR>
+" ^ requires fzf
+
+" display options in a vertical menu above the command bar
+set wildmenu wildoptions+=pum
+
+" enable and disable hlsearch automatically
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
+
+let b:changelog_name="CHANGELOG"
+let b:changelog_path="."
+
+
+set keywordprg=:Man
+nmap <F1> <Plug>ManPreGetPage
+let g:ft_man_open_mode = 'vert'
+let g:ft_man_folding_enable = 1
+
+let &t_Us = "\e[4:2m"
+let &t_ds = "\e[4:4m"
+let &t_Ds = "\e[4:5m"
+
+" easier navigation in wrap mode
+if &wrap
+	nnoremap j gj
+	nnoremap k gk
+endif
+
+" stops .viminfo file from generating in $HOME
+let vif="/home/josh/.config/vim/.viminfo"
+
+" vim:tw=78:ts=8:noet:ft=vim:norl:

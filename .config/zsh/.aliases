@@ -1,0 +1,29 @@
+# Application aliases
+alias nf=/usr/bin/neofetch
+alias top=/usr/bin/htop
+alias nc=/usr/bin/nmcli
+alias g=/usr/bin/git
+
+# System aliases
+alias la="ls -la"
+alias md="mkdir"
+alias mf="touch"
+alias rf="rm"  # df is reserved
+alias rd="rm -rf"
+
+# Git aliases
+alias glog="git log -g"
+alias co="git checkout"
+alias gs="git status"
+alias gst="git status"
+alias gsw="git switch"
+alias gl="git pull"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gc="git commit"
+alias gaa="git add ./* ./.*"
+alias ga="git add"
+
+
+
+# vim ft:zsh
