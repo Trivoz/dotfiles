@@ -34,6 +34,15 @@ Pictures
 *.netrwhist
 .viminfo
 
+.vim
+.oh-my-zsh
+.zshrc
+.bashrc
+.bash_history
+.bash_logout
+.bash_profile
+.gitconfig
+
 # only include programs that i actually have manually configurde
 # and not the ones that have been automatically generated.
 .config/gtk-3.0/
