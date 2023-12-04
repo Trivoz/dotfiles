@@ -3,12 +3,20 @@
 .zshrc_bak
 .zshrc.pre-oh-my-zsh
 .cache
+.cargo
 *.zwc
+*.b[a,c]k
 
 Documents
 Downloads
 Pictures
 
+.config/pavucontrol.ini
+.config/font-manager/
+.config/nautilus/
+.config/discordcanary/
+.config/BetterDiscord/
+.config/BetterDiscord\ Installer/
 .config/zsh/.oh-my-zsh/
 .config/Mousepad/
 .config/Zettlr/

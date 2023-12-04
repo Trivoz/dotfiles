@@ -31,5 +31,9 @@ alias ta="tmux attach"
 alias tn="tmux new"
 alias tns="tmux new -s"
 
+# cargo aliases
+alias c="cargo"
+alias cr="cargo run"
+
 
 # vim ft:zsh

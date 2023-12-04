@@ -1,11 +1,16 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-let g:background="dark"
+set background=dark
+
+colorscheme wildcharm
 
 " this sucks:
 set noswapfile
 set nobackup
+
+" prevents the whole 'this file has been changed' crap
+set autoread
 
 " Emoji and other character support
 set encoding=utf-8
