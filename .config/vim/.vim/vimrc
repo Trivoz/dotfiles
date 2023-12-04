@@ -1,4 +1,6 @@
-execute pathogen#infect()
+source ~/.config/vim/autoload/pathogen.vim
+execute pathogen#infect('bundle/{}', '~/.config/vim/bundle/{}')
+
 syntax on
 filetype plugin indent on
 set background=dark
@@ -19,6 +21,9 @@ set encoding=utf-8
 set relativenumber number
 
 let mapleader=" "
+
+" Open up the fuzzy finder (required FZF)
+nnoremap <C-p> <Cmd>FZF<CR>
 
 " instant file shortcuts TODO: finish the alphabet
 " A, a
@@ -60,8 +65,13 @@ nnoremap <leader>ba <Cmd>ball<CR>
 nnoremap <leader>bl <Cmd>blast<CR>
 nnoremap <leader>bf <Cmd>bfirst<CR>
 
-nnoremap <leader>bf <Cmd>Buffers<CR>
-" ^ requires fzf
+nnoremap <leader>ff <Cmd>Files<CR>
+nnoremap <leader>fc <Cmd>Colors<CR>
+nnoremap <leader>fh <Cmd>History<CR>
+nnoremap <leader>fz <Cmd>Filetypes<CR>
+nnoremap <leader>fs <Cmd>Snippets<CR>
+
+" all of these ^ requires fzf
 
 " display options in a vertical menu above the command bar
 set wildmenu wildoptions+=pum
