@@ -1,3 +1,15 @@
+Documents
+Downloads
+Pictures
+.vim
+.oh-my-zsh
+.zshrc
+.bashrc
+.bash_history
+.bash_logout
+.bash_profile
+.gitconfig
+.tmux.conf
 .bash_history
 .zsh_history
 .zshrc_bak
@@ -7,10 +19,28 @@
 *.zwc
 *.b[a,c]k
 
-Documents
-Downloads
-Pictures
+.password-store
+.pki
+.ssh
+.gnupg
+*zcompdump*
+.mozilla
+*.netrwhist
+.viminfo
 
+# only exclude programs that i actually have manually configurde
+# and not the ones that have been automatically generated.
+.config/gtk-3.0/
+.config/htop/
+.config/procps/
+.config/systemd/
+.config/yay/
+.config/neofetch/
+.config/dconf/
+.config/pulse/
+.config/gh/hosts.yml
+.config/vim/bundle/
+.config/vim/autoload/
 .config/pavucontrol.ini
 .config/font-manager/
 .config/nautilus/
@@ -28,37 +58,3 @@ Pictures
 .local/user/Downloads/
 .local/user/Pictures/
 .local
-
-
-.password-store
-.pki
-.ssh
-.gnupg
-
-*zcompdump*
-
-.mozilla
-
-*.netrwhist
-.viminfo
-
-.vim
-.oh-my-zsh
-.zshrc
-.bashrc
-.bash_history
-.bash_logout
-.bash_profile
-.gitconfig
-
-# only include programs that i actually have manually configurde
-# and not the ones that have been automatically generated.
-.config/gtk-3.0/
-.config/htop/
-.config/procps/
-.config/systemd/
-.config/yay/
-.config/neofetch/
-.config/dconf/
-.config/pulse/
-.config/gh/hosts.yml
