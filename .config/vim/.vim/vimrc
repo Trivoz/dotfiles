@@ -24,6 +24,8 @@ let mapleader=" "
 
 " Open up the fuzzy finder (required FZF)
 nnoremap <C-p> <Cmd>FZF<CR>
+nnoremap <C-g> <Cmd>GitFiles<CR>
+nnoremap <C-c> <Cmd>Commits<CR>
 
 " instant file shortcuts TODO: finish the alphabet
 " A, a
