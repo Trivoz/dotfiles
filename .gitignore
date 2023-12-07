@@ -11,6 +11,8 @@ Videos/
 .config/vim/bundle/vimsence
 .config/vim/bundle/
 *arnrc
+.yarnrc
+.python_history
 
 
 Documents
