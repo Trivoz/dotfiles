@@ -30,6 +30,8 @@ alias td="tmux detach"
 alias ta="tmux attach"
 alias tn="tmux new"
 alias tns="tmux new -s"
+alias t="tmux"
+alias tls="tmux ls"
 
 # cargo aliases
 alias c="cargo"

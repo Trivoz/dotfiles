@@ -77,8 +77,8 @@
 # Font configuration
 font:
   normal:
-    family: PerfectDOSVGA437
-  size: 16.0
+    family: monospace
+  size: 13.0
 #font:
 # Normal (roman) font face
 #normal:

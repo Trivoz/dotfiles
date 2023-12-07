@@ -4,12 +4,26 @@ execute pathogen#infect('bundle/{}', '~/.config/vim/bundle/{}')
 syntax on
 filetype plugin indent on
 set background=dark
+colorscheme gruvbox8
 
-colorscheme wildcharm
+
 
 " this sucks:
 set noswapfile
 set nobackup
+
+" so does this:
+highlight SignColumn guibg=NONE ctermbg=NONE
+
+highlight GitGutterAdd    guifg=#009900 ctermfg=2 guibg=NONE ctermbg=NONE
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3 guibg=NONE ctermbg=NONE
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1 guibg=NONE ctermbg=NONE
+
+" update signs when file is saved
+" autocmd BufWritePost * GitGutter
+
+" makes git status update faster
+set updatetime=50
 
 " prevents the whole 'this file has been changed' crap
 set autoread
@@ -25,6 +39,7 @@ let mapleader=" "
 " Open up the fuzzy finder (required FZF)
 nnoremap <C-p> <Cmd>FZF<CR>
 nnoremap <C-g> <Cmd>GitFiles<CR>
+nnoremap <C-l> <Cmd>GitFiles?<CR>
 nnoremap <C-c> <Cmd>Commits<CR>
 
 " instant file shortcuts TODO: finish the alphabet
@@ -37,11 +52,14 @@ nnoremap <leader>eC <Cmd>edit /etc<CR>
 " H, h
 nnoremap <leader>eh <Cmd>edit /etc/host.conf<CR>
 nnoremap <leader>eH <Cmd>edit /etc/hostname<CR>
+" I, i
+nnoremap <leader>ei <Cmd>edit /home/josh/.config/i3/config<CR>
+nnoremap <leader>eI <Cmd>edit /home/josh/.config/i3/i3blocks.conf<CR>
 " N, n
 nnoremap <leader>en <Cmd>edit /etc/ntp.conf<CR>
 nnoremap <leader>eN <Cmd>edit /etc/NetworkManager/NetworkManager.conf<CR>
 " T, t
-nnoremap <leader>et <Cmd>edit $HOME/.config/tmux/tmux.conf<CR>
+nnoremap <leader>et <Cmd>edit $HOME/.config/tmux/.tmux.conf<CR>
 nnoremap <leader>eT <Cmd>edit $HOME/.config/awesome/theme.lua<CR>
 " X, x
 nnoremap <leader>ex <Cmd>Explore<CR>
@@ -68,6 +86,7 @@ nnoremap <leader>bl <Cmd>blast<CR>
 nnoremap <leader>bf <Cmd>bfirst<CR>
 
 nnoremap <leader>ff <Cmd>Files<CR>
+nnoremap <leader>fw <Cmd>Rg<CR>
 nnoremap <leader>fc <Cmd>Colors<CR>
 nnoremap <leader>fh <Cmd>History<CR>
 nnoremap <leader>fz <Cmd>Filetypes<CR>
@@ -98,6 +117,9 @@ let &t_Us = "\e[4:2m"
 let &t_ds = "\e[4:4m"
 let &t_Ds = "\e[4:5m"
 
+" XXX: this.
+set nowrap
+
 " easier navigation in wrap mode
 if &wrap
     nnoremap j gj
@@ -112,5 +134,33 @@ set expandtab
 
 " stops .viminfo file from generating in $HOME
 let vif="/home/josh/.config/vim/.viminfo"
+
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+    " Better mouse support, see  :help 'ttymouse'
+    set ttymouse=sgr
+
+    " Enable true colors, see  :help xterm-true-color
+    let &termguicolors = v:true
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+    " Enable bracketed paste mode, see  :help xterm-bracketed-paste
+    let &t_BE = "\<Esc>[?2004h"
+    let &t_BD = "\<Esc>[?2004l"
+    let &t_PS = "\<Esc>[200~"
+    let &t_PE = "\<Esc>[201~"
+
+    " Enable focus event tracking, see  :help xterm-focus-event
+    let &t_fe = "\<Esc>[?1004h"
+    let &t_fd = "\<Esc>[?1004l"
+    execute "set <FocusGained>=\<Esc>[I"
+    execute "set <FocusLost>=\<Esc>[O"
+
+    " Enable modified arrow keys, see  :help arrow_modifiers
+    execute "silent! set <xUp>=\<Esc>[@;*A"
+    execute "silent! set <xDown>=\<Esc>[@;*B"
+    execute "silent! set <xRight>=\<Esc>[@;*C"
+    execute "silent! set <xLeft>=\<Esc>[@;*D"
+endif
 
 " vim:tw=78:ts=8:noet:ft=vim:norl:
