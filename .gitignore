@@ -1,3 +1,11 @@
+.config/hatch/
+.mkshrc
+.profile
+.rvm/
+.task
+.taskrc
+.zlogin
+
 .config/QtProject.conf
 .config/audacious/
 .config/i3/
